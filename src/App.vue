@@ -1,14 +1,23 @@
 <template>
-  <div></div>
+  <div>
+    <wallet></wallet>
+  </div>
 </template>
 <script>
+import Wallet from "./components/wallet.vue"
+
 export default {
   name: "App",
   data: function () {
     return {
-      count: 0
+      message: "hello world"
     }
+  },
+  components: {
+    Wallet
   }
 }
 </script>
+
+
 
