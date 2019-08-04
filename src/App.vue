@@ -1,18 +1,37 @@
 <template>
-  <div></div>
+  <div>
+    <wallet-list :wallets="wallets"></wallet-list>
+  </div>
 </template>
 <script>
-import Wallet from "./components/wallet.vue"
+import WalletList from "./components/wallet-list.vue"
 
 export default {
   name: "App",
   data: function () {
     return {
-      message: "hello world"
+      message: "hello world",
+      wallets: [
+        {
+          name: "savings",
+          balance: "10000",
+          currency: "P"
+        },
+        {
+          name: "emergency",
+          balance: "10000",
+          currency: "P"
+        },
+        {
+          name: "payroll",
+          balance: "10000",
+          currency: "P"
+        }
+      ]
     }
   },
   components: {
-    Wallet
+    WalletList
   }
 }
 </script>
