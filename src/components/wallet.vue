@@ -1,18 +1,15 @@
 <template>
   <div class="wallet">
-    <span class="amount"> {{ wallet.balance }} </span>
+    <span class="balance"> {{ currency }} {{ balance }} </span>
+    <span class="name"> {{ name }} </span>
   </div>
 </template>
 <script>
 export default {
   name: "Wallet",
+  props: [ "name", "balance", "currency" ],
   data: function () { 
-    return {
-      wallet: {
-        name: "", 
-        balance: 6000
-      }
-    }
+    return {}
   }
 }
 </script>
@@ -21,13 +18,17 @@ export default {
     background-color: #023246;
     color: white;
     max-width: 60px;
-    padding: 40px;
+    padding: 35px 40px 30px 40px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 5px 5px 15px grey;
     font-family: "HelveticaNeue-Light";
-    .amount {
-      font-size: 20px
+    .balance {
+      font-size: 20px;
+    }
+    .name {
+      font-size: 15px;
+      display: block;
     }
   }
 </style>

@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <wallet></wallet>
-  </div>
+  <div></div>
 </template>
 <script>
 import Wallet from "./components/wallet.vue"
