@@ -25,7 +25,6 @@ export default {
     margin: 0;
     padding: 0;
     li {
-      //float: left;
       margin: 1% 0 1% 0;
     }
   }
