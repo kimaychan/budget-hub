@@ -17,7 +17,7 @@ export default {
   .wallet {
     background-color: #023246;
     color: white;
-    min-width: 60px;
+    max-width: 60px;
     padding: 35px 40px 30px 40px;
     text-align: center;
     border-radius: 10px;

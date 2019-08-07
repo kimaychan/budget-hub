@@ -15,6 +15,7 @@ export default {
     padding: 2%;
     background-color: #023246;
     color: white;
+    border-radius: 10px;
     .date {
       float: right;
     }

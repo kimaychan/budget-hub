@@ -1,8 +1,8 @@
 <template>
   <div>
     <ul class="wallet-list">
-      <li :key="wallet.name" v-for="wallet in wallets">
-        <wallet :currency="wallet.currency" :name="wallet.name" :balance="wallet.balance"></wallet>
+      <li :key="i" v-for="(w, i) in wallets">
+        <wallet :currency="w.currency" :name="w.name" :balance="w.balance"></wallet>
       </li>
     </ul>
   </div>
@@ -15,7 +15,10 @@ export default {
   data: function () { 
     return {}
   },
-  components: { Wallet }
+  components: { Wallet },
+  mounted: function () {
+    console.log(this.wallets)
+  }
 }
 </script>
 <style lang="scss" scoped>
