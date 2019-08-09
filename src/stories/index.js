@@ -5,6 +5,15 @@ import WalletList from "./../components/wallet-list.vue"
 import Transaction from "./../components/transaction.vue"
 import TransactionList from "./../components/transaction-list.vue"
 
+const transaction = { 
+  purpose: 'bill', 
+  date: 'Aug. 8, 2019', 
+  destination: 'Globe', 
+  amountValue: '1000', 
+  amountCurrency: 'PHP' 
+}
+
+
 storiesOf("Wallet", module)
   .add('wallet', () => ({
     components: { Wallet },
@@ -21,6 +30,7 @@ storiesOf("Wallet", module)
       ></wallet-list>`
   }))
 
+
 storiesOf("Transaction", module)
   .add('transaction', () => ({
     components: { Transaction },
@@ -28,17 +38,16 @@ storiesOf("Transaction", module)
       purpose="bill" 
       date="Aug. 8, 2019" 
       destination="Globe"
-      amount="{ value: '1000', currency: 'PHP '}"></transaction>`
+      amount-value= "1000"
+      amount-currency="P"></transaction>`
   }))
   .add('transaction list', () => ({
     components: { TransactionList },
-    template: `<transaction-list
-        :transactions="[{
-          purpose: 'bill',
-          date:'Aug. 8, 2019',
-          destination: 'Globe',
-          amount: '{ value: "1000", currency: "P"}'
-        }]">
-        </transaction-list>
-      `
+    template: `<transaction-list 
+      :transactions="[
+        { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 8, 2019', destination: 'Globe'}, 
+        { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 8, 2019', destination: 'Globe'},
+        { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 8, 2019', destination: 'Globe'}
+      ]"
+    ></transaction-list>`
   }))

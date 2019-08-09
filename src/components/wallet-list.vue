@@ -15,10 +15,7 @@ export default {
   data: function () { 
     return {}
   },
-  components: { Wallet },
-  mounted: function () {
-    console.log(this.wallets)
-  }
+  components: { Wallet }
 }
 </script>
 <style lang="scss" scoped>

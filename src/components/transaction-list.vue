@@ -3,7 +3,8 @@
     <ul class="transaction-list">
       <li :key="i" v-for="(t, i) in transactions">
         <transaction 
-          :amount="t.amount" 
+          :amount-currency="t.amountCurrency"
+          :amount-value="t.amountValue" 
           :purpose="t.purpose"
           :date="t.date"
           :destination="t.destination"></transaction> 
@@ -16,7 +17,10 @@ import Transaction from "./transaction.vue"
 export default {
   name: "TransactionList",
   props: ["transactions"],
-  components: { Transaction }
+  components: { Transaction },
+  mounted: () => {
+    console.log(this)
+  }
 }
 </script>
 <style lang="scss" scoped>
