@@ -5,6 +5,8 @@ import WalletList from "./../components/wallet-list.vue"
 import Transaction from "./../components/transaction.vue"
 import TransactionList from "./../components/transaction-list.vue"
 
+import SideNav from "./../components/side-nav.vue"
+
 const transaction = { 
   purpose: 'bill', 
   date: 'Aug. 8, 2019', 
@@ -50,4 +52,10 @@ storiesOf("Transaction", module)
         { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 8, 2019', destination: 'Globe'}
       ]"
     ></transaction-list>`
+  }))
+
+storiesOf("Navs", module)
+  .add('side-nav', () => ({
+    components: { SideNav },
+    template: '<side-nav></side-nav>'
   }))

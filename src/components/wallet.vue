@@ -1,6 +1,7 @@
 <template>
   <div class="wallet">
     <span class="balance"> {{ currency }} {{ balance }} </span>
+    <hr/>
     <span class="name"> {{ name }} </span>
   </div>
 </template>
@@ -17,17 +18,16 @@ export default {
   .wallet {
     background-color: #023246;
     color: white;
-    max-width: 60px;
-    padding: 35px 40px 30px 40px;
+    max-width: 5rem;
+    padding: 2.5rem;
     text-align: center;
     border-radius: 10px;
     box-shadow: 5px 5px 15px grey;
-    font-family: "HelveticaNeue-Light";
     .balance {
-      font-size: 1.3rem;
+      font-size: 100%;
     }
     .name {
-      font-size: .7rem;
+      font-size: 70%;
       display: block;
     }
   }
