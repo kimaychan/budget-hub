@@ -16,6 +16,7 @@ export default {
     background-color: #023246;
     color: white;
     border-radius: 10px;
+    box-shadow: 5px 5px 15px grey;
     .date {
       float: right;
     }

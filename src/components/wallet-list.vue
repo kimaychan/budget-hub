@@ -25,7 +25,7 @@ export default {
     list-style-type: none;
     li {
       float: left;
-      margin: 2rem 1.5rem 2.5rem 0;
+      margin: 0 .5rem 0 0;
     }
   }
 </style>

@@ -1,15 +1,11 @@
 <template>
   <div class="dashboard">
-
-      <panel title="Your Wallets">
-        <wallet-list :wallets="wallets"></wallet-list> 
-      </panel>
-
-
-      <panel title="Your Transactions">
-        <transaction-list :transactions="transactions"></transaction-list> 
-      </panel>
-
+    <panel title="Your Wallets">
+      <wallet-list :wallets="wallets"></wallet-list> 
+    </panel>
+    <panel title="Your Transactions">
+      <transaction-list :transactions="transactions"></transaction-list> 
+    </panel>
   </div>
 </template>
 <script>
@@ -46,6 +42,7 @@ export default {
   .dashboard {
     .panel {
       min-width: 100%;
+      margin: 1rem 0 2.5rem 0;
     }
   }
 </style>

@@ -29,9 +29,8 @@ export default {
     list-style-type: none;
     margin: 0;
     padding: 0;
-
     li {
-      margin: 1% 0 1% 0;
+      margin: 0 0 .5rem 0;
     }
   }
   
