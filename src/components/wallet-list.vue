@@ -20,10 +20,12 @@ export default {
 </script>
 <style lang="scss" scoped>
   ul.wallet-list {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
     li {
       float: left;
-      margin: 3%;
+      margin: 2rem 1.5rem 2.5rem 0;
     }
   }
 </style>

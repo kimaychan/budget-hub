@@ -19,7 +19,7 @@ export default {
     background-color: #023246;
     color: white;
     max-width: 5rem;
-    padding: 2.5rem;
+    padding: 2rem 3rem;
     text-align: center;
     border-radius: 10px;
     box-shadow: 5px 5px 15px grey;
@@ -29,6 +29,9 @@ export default {
     .name {
       font-size: 70%;
       display: block;
+    }
+    hr {
+      width: 4rem;
     }
   }
 </style>

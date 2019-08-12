@@ -15,7 +15,6 @@ const transaction = {
   amountCurrency: 'PHP' 
 }
 
-
 storiesOf("Wallet", module)
   .add('wallet', () => ({
     components: { Wallet },
