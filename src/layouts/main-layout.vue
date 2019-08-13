@@ -1,8 +1,11 @@
 <template>
   <div class="main-layout">
-    <div class="side-nav">
+    <header>
+      <div class="menu"> <a href="#"> Logout </a></div>
+    </header>
+    <aside class="side-nav">
       <side-nav></side-nav>
-    </div>
+    </aside>
     <div class="content">
       <slot name="content"></slot>
     </div>
@@ -19,10 +22,16 @@ export default {
 </script>
 <style lang="scss" scoped>
   .main-layout {
+    header {
+      .menu {
+        padding: 1rem;
+        float:right;
+      }
+    }
     .side-nav {
       height: 100%;
       position: fixed;
-      width: 3rem;
+      width: 3.5rem;
     }
     .content {
       margin-left: 3rem;

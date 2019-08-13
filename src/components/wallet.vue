@@ -21,7 +21,6 @@ export default {
     max-width: 5rem;
     padding: 2rem 3rem;
     text-align: center;
-    border-radius: 10px;
     box-shadow: 5px 5px 15px grey;
     .balance {
       font-size: 100%;

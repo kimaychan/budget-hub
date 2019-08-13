@@ -12,10 +12,9 @@ export default {
 </script>
 <style lang="scss" scoped>
   .transaction {
-    padding: 0.7rem;
+    padding: 0.8rem;
     background-color: #023246;
     color: white;
-    border-radius: 10px;
     box-shadow: 5px 5px 15px grey;
     .date {
       float: right;
