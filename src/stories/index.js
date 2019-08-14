@@ -7,6 +7,8 @@ import TransactionList from "./../components/transaction-list.vue"
 
 import SideNav from "./../components/side-nav.vue"
 
+import Modal from "./../components/modal.vue"
+
 const transaction = { 
   purpose: 'bill', 
   date: 'Aug. 8, 2019', 
@@ -57,4 +59,10 @@ storiesOf("Navs", module)
   .add('side-nav', () => ({
     components: { SideNav },
     template: '<side-nav></side-nav>'
+  }))
+
+storiesOf("Modals", module)
+  .add('modal', () => ({
+    components: { Modal },
+    template: '<modal> hello world </modal>'
   }))
