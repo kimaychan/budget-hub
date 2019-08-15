@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/vue';
 import Wallet from './../components/wallet.vue';
 import WalletList from "./../components/wallet-list.vue"
+import WalletForm from "./../components/wallet-form.vue"
 
 import Transaction from "./../components/transaction.vue"
 import TransactionList from "./../components/transaction-list.vue"
@@ -65,4 +66,14 @@ storiesOf("Modals", module)
   .add('modal', () => ({
     components: { Modal },
     template: '<modal> hello world </modal>'
+  }))
+
+storiesOf("Forms", module)
+  .add('wallet-form', () => ({
+    components: { WalletForm },
+    template: '<wallet-form></wallet-form>'
+  }))
+  .add('wallet-form-modal', () => ({
+    components: { WalletForm, Modal },
+    template: '<modal><wallet-form><wallet-form></modal>'
   }))
