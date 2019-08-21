@@ -1,33 +1,39 @@
 <template>
-  <form class="wallet-form">
+  <form class="transaction-form">
     <table>
       <tr>
         <td colspan="2"> 
-          <div class="title">Wallet</div>  
+          <div class="title">Transaction</div>  
         </td>
       </tr>
       <tr>
         <td>
-          <label for="name">Name: </label>
+          <label for="source">Source: </label>
         </td>
-        <td> <input id="name" type="text"> </td>
+        <td> <input id="source" type="text"> </td>
       </tr>
       <tr>
         <td>
-          <label for="currency">Currency: </label>
+          <label for="destination">Destination: </label>
         </td>
-        <td> <input id="currency" type="text"> </td>
+        <td> <input id="destination" type="text"> </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="amount">Amount: </label>
+        </td>
+        <td> <input id="amount" type="text"> </td>
       </tr>
     </table>
   </form>  
 </template>
 <script>
 export default {
-  props: ["wallet"]
+  props: ["transaction"]
 }
 </script>
 <style lang="scss" scoped>
-  .wallet-form {
+  .transaction-form {
     table {
       border: none;
       tr {

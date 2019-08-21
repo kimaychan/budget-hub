@@ -5,6 +5,7 @@ import WalletForm from "./../components/wallet-form.vue"
 
 import Transaction from "./../components/transaction.vue"
 import TransactionList from "./../components/transaction-list.vue"
+import TransactionForm from "./../components/transaction-form.vue"
 
 import SideNav from "./../components/side-nav.vue"
 
@@ -76,4 +77,12 @@ storiesOf("Forms", module)
   .add('wallet-form-modal', () => ({
     components: { WalletForm, Modal },
     template: '<modal><wallet-form><wallet-form></modal>'
+  }))
+  .add('transaction-form', () => ({
+    components: { TransactionForm },
+    template: '<transaction-form></transaction-form>'
+  }))
+  .add('transaction-form-modal', () => ({
+    components: { TransactionForm, Modal },
+    template: '<modal><transaction-form><transaction-form></modal>'
   }))
