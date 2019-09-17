@@ -1,7 +1,5 @@
 <template>
-  <div class="side-nav">
-
-  </div>
+  <div class="side-nav"></div>
 </template>
 <script>
 export default {
@@ -10,7 +8,10 @@ export default {
 </script>
 <style lang="scss" scoped>
   .side-nav {
-    background-color: #023246;
+    background-color: #1E1E1E;
+    height: 100%;
+    width: 3rem;
+    position: fixed;
     color: white;
   }
 </style>
