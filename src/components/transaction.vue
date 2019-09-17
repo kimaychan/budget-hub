@@ -1,7 +1,12 @@
 <template>
   <div class="transaction">
-    <span>You paid {{ amountCurrency }} {{ amountValue }} to {{ destination}} for {{ purpose }}</span>
-    <span class="date">{{ date }}</span>
+    <table>
+      <tr>
+        <td>{{ amountCurrency }} {{ amountValue }}</td>
+        <td>{{ purpose }}</td>
+        <td>{{ date }}</td>
+      </tr>
+    </table>
   </div>
 </template>
 <script>
@@ -12,12 +17,18 @@ export default {
 </script>
 <style lang="scss" scoped>
   .transaction {
-    padding: 0.8rem;
-    background-color: #023246;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    background-color: #1E1E1E;
     color: white;
     box-shadow: 5px 5px 15px grey;
-    .date {
-      float: right;
+    table {
+      width: 100%;
+      tr {
+        td:first-child, td:last-child {
+          width: 10%;
+        }
+      }
     }
   }
 </style>

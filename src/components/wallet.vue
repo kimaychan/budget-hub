@@ -1,7 +1,6 @@
 <template>
   <div class="wallet">
     <span class="balance"> {{ currency }} {{ balance }} </span>
-    <hr/>
     <span class="name"> {{ name }} </span>
   </div>
 </template>
@@ -16,21 +15,18 @@ export default {
 </script>
 <style lang="scss" scoped>
   .wallet {
-    background-color: #023246;
+    background-color: #1E1E1E;
     color: white;
-    max-width: 5rem;
     padding: 2rem 3rem;
     text-align: center;
     box-shadow: 5px 5px 15px grey;
+    box-sizing: border-box;
     .balance {
-      font-size: 100%;
+      font-size: 120%;
     }
     .name {
-      font-size: 70%;
+      font-size: 60%;
       display: block;
-    }
-    hr {
-      width: 4rem;
     }
   }
 </style>
