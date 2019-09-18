@@ -8,7 +8,7 @@ Vue.use(Vuex)
 import "./styles/main.scss"
 
 new Vue({
-  el: '#app',
+  el: "#app",
   render: h => h(App),
   components: { App }
 })
