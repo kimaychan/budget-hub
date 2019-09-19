@@ -44,8 +44,6 @@ export default {
 </script>
 <style lang="scss" scoped>
   .transaction-form {
-    background: black;
-    color: white;
     padding: 1rem;
     table {
       width: 100%;
@@ -56,14 +54,16 @@ export default {
           .title {
             text-align: center;
             font-size: 1rem;
+            color: rgb(209, 209, 211);
           }
           label {
             font-size: .8rem;
+            color: rgb(125, 125, 139);
           }
           input {
             width: 100%;
             height: 1.2rem;
-            border: solid black;
+            border: none;
             border-radius: .2rem;
             &:focus { outline: 0; }
           }

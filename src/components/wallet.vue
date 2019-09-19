@@ -15,21 +15,22 @@ export default {
 </script>
 <style lang="scss" scoped>
   .wallet {
-    background-color: rgb(22, 22, 22);
-    color: rgb(220, 220, 220);
+    background-color: rgb(15, 20, 36);
     padding: 2rem 3rem;
     text-align: center;
-    // box-shadow: 5px 5px 15px grey;
+    border-radius: .1rem;
     box-sizing: border-box;
     .balance {
       font-size: 120%;
+      color: rgb(220, 220, 220);
     }
     .name {
       font-size: 60%;
       display: block;
+      color: rgb(95, 93, 112);
     }
     &:hover {
-      background-color: rgb(35, 35, 35);
+      background-color: rgba(49, 51, 71, 0.363);
       cursor: pointer;
     }
   }

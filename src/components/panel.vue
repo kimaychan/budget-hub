@@ -15,9 +15,9 @@ export default {
   .panel {
     padding: .5rem;
     float: left;
-    color: white;
+    color: rgb(209, 209, 211);
     .panel-title {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
     .panel-content {
       margin-top: 1rem;

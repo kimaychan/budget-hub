@@ -8,7 +8,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   .side-nav {
-    background-color: rgb(22, 22, 22);
+    background-color: rgb(10, 14, 29);
     height: 100%;
     width: 3rem;
     position: fixed;

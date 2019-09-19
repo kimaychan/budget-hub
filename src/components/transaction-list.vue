@@ -30,7 +30,7 @@ export default {
     margin: 0;
     padding: 0;
     li {
-      margin: 0 0 .5rem 0;
+      margin: 0 0 .3rem 0;
     }
   }
   

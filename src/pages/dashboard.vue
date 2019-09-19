@@ -1,12 +1,13 @@
 <template>
   <div class="dashboard">
-    <panel title="Your Wallets">
+    <panel title="Your Accounts">
       <wallet-list :wallets="wallets"></wallet-list> 
     </panel>
     <panel title="Your Transactions">
       <transaction-list :transactions="transactions"></transaction-list> 
     </panel>
-    <modal><wallet-form></wallet-form></modal>
+    <!-- <modal><transaction-form></transaction-form></modal> -->
+    <!-- <modal><wallet-form></wallet-form></modal> -->
   </div>
 </template>
 <script>

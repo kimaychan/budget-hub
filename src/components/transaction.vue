@@ -21,8 +21,9 @@ export default {
   .transaction {
     padding: 0.5rem;
     box-sizing: border-box;
-    background-color: rgb(22, 22, 22);
-    color: rgb(220, 220, 220);
+    background-color: rgb(15, 20, 36);
+    border-radius: .1rem;
+    color: rgb(125, 125, 139);
     font-size: .8rem;
     // box-shadow: 5px 5px 15px grey;
     table {
