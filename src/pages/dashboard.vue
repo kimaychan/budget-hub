@@ -6,6 +6,7 @@
     <panel title="Your Transactions">
       <transaction-list :transactions="transactions"></transaction-list> 
     </panel>
+    <modal><wallet-form></wallet-form></modal>
   </div>
 </template>
 <script>
@@ -13,23 +14,31 @@ import WalletList from "./../components/wallet-list.vue"
 import TransactionList from "./../components/transaction-list.vue"
 import Panel from "./../components/panel.vue"
 
+import WalletForm from "./../components/wallet-form.vue"
+import TransactionForm from "./../components/transaction-form.vue"
+
+import Modal from "./../components/modal.vue"
+
 export default {
   components: {
     WalletList,
     TransactionList,
-    Panel
+    Panel,
+    WalletForm,
+    TransactionForm,
+    Modal
   },
   data: () => {
     return {
       wallets: [
-        { name:'php wallet', balance:'1000', currency:'P'}, 
-        { name:'php wallet', balance:'1000', currency:'P'},
-        { name:'php wallet', balance:'1000', currency:'P'}
+        { name:'physical wallet', balance:'1920', currency:'P'}, 
+        { name:'savings', balance:'5000', currency:'P'},
+        { name:'emergency fund', balance:'3000', currency:'P'}
       ],
       transactions: [
-        { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 8, 2019', destination: 'Globe', type: 'expense' }, 
-        { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 8, 2019', destination: 'Globe', type: 'transfer' },
-        { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 8, 2019', destination: 'Globe', type: 'income' }
+        { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 17, 2019', destination: 'Globe', type: 'expense' }, 
+        { purpose:'savings', amountValue:'5000', amountCurrency:'P', date: 'Aug. 16, 2019', destination: 'Globe', type: 'transfer' },
+        { purpose:'salary', amountValue:'9000', amountCurrency:'P', date: 'Aug. 15, 2019', destination: 'Globe', type: 'income' }
       ]
     }
   },

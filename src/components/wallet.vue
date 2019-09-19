@@ -28,6 +28,10 @@ export default {
       font-size: 60%;
       display: block;
     }
+    &:hover {
+      background-color: rgb(35, 35, 35);
+      cursor: pointer;
+    }
   }
 </style>
 
