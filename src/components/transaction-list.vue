@@ -7,7 +7,8 @@
           :amount-value="t.amountValue" 
           :purpose="t.purpose"
           :date="t.date"
-          :destination="t.destination"></transaction> 
+          :destination="t.destination"
+          :type="t.type"></transaction> 
       </li>
     </ul>
   </div>
@@ -24,7 +25,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
   ul.transaction-list {
     list-style-type: none;
     margin: 0;

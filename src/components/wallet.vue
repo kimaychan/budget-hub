@@ -15,11 +15,11 @@ export default {
 </script>
 <style lang="scss" scoped>
   .wallet {
-    background-color: #1E1E1E;
-    color: white;
+    background-color: rgb(22, 22, 22);
+    color: rgb(220, 220, 220);
     padding: 2rem 3rem;
     text-align: center;
-    box-shadow: 5px 5px 15px grey;
+    // box-shadow: 5px 5px 15px grey;
     box-sizing: border-box;
     .balance {
       font-size: 120%;

@@ -1,7 +1,7 @@
 <template>
   <div class="main-layout">
     <header>
-      <div class="menu"> <a href="#"> Logout </a></div>
+      <div class="menu"></div>
     </header>
     <aside class="side-nav">
       <side-nav></side-nav>
@@ -31,7 +31,6 @@ export default {
     .side-nav {
       height: 100%;
       position: fixed;
-      width: 3.5rem;
     }
     .content {
       margin-left: 3rem;

@@ -15,6 +15,7 @@ export default {
   .panel {
     padding: .5rem;
     float: left;
+    color: white;
     .panel-title {
       font-size: 1.5rem;
     }

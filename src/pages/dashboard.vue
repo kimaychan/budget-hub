@@ -27,9 +27,9 @@ export default {
         { name:'php wallet', balance:'1000', currency:'P'}
       ],
       transactions: [
-        { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 8, 2019', destination: 'Globe'}, 
-        { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 8, 2019', destination: 'Globe'},
-        { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 8, 2019', destination: 'Globe'}
+        { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 8, 2019', destination: 'Globe', type: 'expense' }, 
+        { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 8, 2019', destination: 'Globe', type: 'transfer' },
+        { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 8, 2019', destination: 'Globe', type: 'income' }
       ]
     }
   },
