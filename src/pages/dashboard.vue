@@ -1,13 +1,15 @@
 <template>
   <div class="dashboard">
     <panel title="Your Accounts">
-      <wallet-list :wallets="wallets"></wallet-list> 
+      <wallet-list :wallets="wallets" @walletclicked="isModalShown=true"></wallet-list> 
     </panel>
     <panel title="Your Transactions">
-      <transaction-list :transactions="transactions"></transaction-list> 
+      <transaction-list :transactions="transactions" ></transaction-list> 
     </panel>
-    <!-- <modal><transaction-form></transaction-form></modal> -->
-    <!-- <modal><wallet-form></wallet-form></modal> -->
+    <modal :isShow="isModalShown">
+      <wallet-form :wallet="featured.wallet" v-if="featured.wallet!={}"></wallet-form>
+      <!-- <transaction-form :transaction="featured.transaction" v-if="featured.transaction!={}"></transaction-form> -->
+    </modal>
   </div>
 </template>
 <script>
@@ -40,11 +42,25 @@ export default {
         { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 17, 2019', destination: 'Globe', type: 'expense' }, 
         { purpose:'savings', amountValue:'5000', amountCurrency:'P', date: 'Aug. 16, 2019', destination: 'Globe', type: 'transfer' },
         { purpose:'salary', amountValue:'9000', amountCurrency:'P', date: 'Aug. 15, 2019', destination: 'Globe', type: 'income' }
-      ]
+      ],
+      isModalShown: false,
+      featured: {
+        wallet: {},
+        transaction: {}
+      }
     }
   },
-  mounted: () => {
-    console.log(" dashboard is mounted!")
+  methods: {
+    // onFeatureWallet(data) {
+    //   this.featured.wallet = {...data}
+    //   this.featured.transaction = {}
+    //   this.isModalShown=true
+    // },
+    // onFeatureTransaction(data) {
+    //   this.featured.wallet = {}
+    //   this.featured.transaction = {...data}
+    //   this.isModalShown=true
+    // }
   }
 }
 </script>

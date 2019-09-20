@@ -1,5 +1,5 @@
 <template>
-  <div class="modal">
+  <div class="modal" v-if="isShow">
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
@@ -11,7 +11,7 @@
 </template>
 <script>
 export default {
-
+  props: ["isShow"]
 }
 </script>
 <style lang="scss" scoped>

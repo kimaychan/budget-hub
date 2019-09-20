@@ -2,7 +2,9 @@
   <div>
     <ul class="wallet-list">
       <li :key="i" v-for="(w, i) in wallets">
-        <wallet :currency="w.currency" :name="w.name" :balance="w.balance"></wallet>
+        <div class="wallet-wrapper" @click="$emit('walletclicked', w)">
+          <wallet :currency="w.currency" :name="w.name" :balance="w.balance"></wallet>
+        </div>
       </li>
     </ul>
   </div>

@@ -2,13 +2,15 @@
   <div>
     <ul class="transaction-list">
       <li :key="i" v-for="(t, i) in transactions">
-        <transaction 
-          :amount-currency="t.amountCurrency"
-          :amount-value="t.amountValue" 
-          :purpose="t.purpose"
-          :date="t.date"
-          :destination="t.destination"
-          :type="t.type"></transaction> 
+        <div class="transaction-wrapper" @click="$emit('transactionclicked', t)">
+          <transaction 
+            :amount-currency="t.amountCurrency"
+            :amount-value="t.amountValue" 
+            :purpose="t.purpose"
+            :date="t.date"
+            :destination="t.destination"
+            :type="t.type"></transaction> 
+        </div>
       </li>
     </ul>
   </div>
