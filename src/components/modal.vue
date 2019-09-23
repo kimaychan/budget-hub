@@ -33,7 +33,7 @@ export default {
           width: 300px;
           margin: 0px auto;
           border: solid .5px rgb(95, 93, 112);
-          background: rgb(15, 20, 36);
+          background: rgb(0, 5, 22);
           border-radius: 2px;
           box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
           transition: all .3s ease;

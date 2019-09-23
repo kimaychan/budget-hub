@@ -41,7 +41,7 @@ export default {
       }
     }
     .income { 
-      color: #177535; 
+      color: #30ac57; 
       &::before {
         content: "+"
       }
