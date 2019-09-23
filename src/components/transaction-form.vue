@@ -11,7 +11,8 @@
           <label for="source">Source: </label>
         </td>
         <td> 
-          <input id="source" type="text"> 
+          <input id="source" type="text" :value="transaction.source" v-if="isEditMode"> 
+          <span v-if="!isEditMode">{{ transaction.source }}</span>
         </td>
       </tr>
       <tr>
@@ -19,7 +20,8 @@
           <label for="destination">Destination: </label>
         </td>
         <td> 
-          <input id="destination" type="text"> 
+          <input id="destination" type="text" :value="transaction.destination" v-if="isEditMode"> 
+          <span v-if="!isEditMode">{{ transaction.destination }}</span>
         </td>
       </tr>
       <tr>
@@ -27,7 +29,8 @@
           <label for="amount">Amount: </label>
         </td>
         <td> 
-          <input id="amount" type="text"> 
+          <input id="amount" type="text" :value="transaction.amountValue" v-if="isEditMode"> 
+          <span v-if="!isEditMode">{{ transaction.amountValue }}</span>
         </td>
       </tr>
       <tr v-if="isEditMode">
@@ -72,6 +75,10 @@ export default {
             border: none;
             border-radius: .2rem;
             &:focus { outline: 0; }
+          }
+          label, span {
+            font-size: .8rem;
+            color: rgb(125, 125, 139);
           }
         }
         &:not(first-child) {

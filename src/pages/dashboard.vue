@@ -1,17 +1,21 @@
 <template>
   <div class="dashboard">
     <panel title="Your Accounts">
-      <wallet-list :wallets="wallets" @walletclicked="isWalletModalShown=true"></wallet-list> 
+      <wallet-list :wallets="wallets" @walletclicked="onShowWalletForm"></wallet-list> 
     </panel>
     <panel title="Your Transactions">
-      <transaction-list :transactions="transactions" @transactionclicked="isTransactionModalShown=true"></transaction-list> 
+      <transaction-list :transactions="transactions" @transactionclicked="onShowTransactionForm"></transaction-list> 
     </panel>
     <wallet-modal-form 
       :isShow="isWalletModalShown" 
-      @modalcloseclicked="isWalletModalShown=false"></wallet-modal-form>
+      @modalcloseclicked="isWalletModalShown=false"
+      :wallet="featuredWallet"
+    ></wallet-modal-form>
     <transaction-modal-form 
       :isShow="isTransactionModalShown" 
-      @modalcloseclicked="isTransactionModalShown=false"></transaction-modal-form>
+      @modalcloseclicked="isTransactionModalShown=false"
+      :transaction="featuredTransaction"
+    ></transaction-modal-form>
   </div>
 </template>
 <script>
@@ -38,15 +42,52 @@ export default {
         { name:'emergency fund', balance:'3000', currency:'P'}
       ],
       transactions: [
-        { purpose:'bill', amountValue:'1000', amountCurrency:'P', date: 'Aug. 17, 2019', destination: 'Globe', type: 'expense' }, 
-        { purpose:'savings', amountValue:'5000', amountCurrency:'P', date: 'Aug. 16, 2019', destination: 'Globe', type: 'transfer' },
-        { purpose:'salary', amountValue:'9000', amountCurrency:'P', date: 'Aug. 15, 2019', destination: 'Globe', type: 'income' }
+        { 
+          purpose:'bill', 
+          amountValue:'1000', 
+          amountCurrency:'P', 
+          date: 'Aug. 17, 2019', 
+          source: 'Payroll Account',
+          destination: 'Globe', 
+          type: 'expense' 
+        }, 
+        { 
+          purpose:'savings', 
+          amountValue:'5000', 
+          amountCurrency:'P', 
+          date: 'Aug. 16, 2019', 
+          source: 'Payroll Account',
+          destination: 'Globe', 
+          type: 'transfer' 
+        },
+        { 
+          purpose:'salary', 
+          amountValue:'9000', 
+          amountCurrency:'P', 
+          date: 'Aug. 15, 2019', 
+          source: 'Payroll Account',
+          destination: 'Globe', 
+          type: 'income' 
+        }
       ],
       isWalletModalShown: false,
-      isTransactionModalShown: false
+      isTransactionModalShown: false,
+      featuredWallet: {},
+      featuredTransaction: {}
     }
   },
-  methods: {}
+  methods: {
+    onShowWalletForm(data) {
+      console.log("showing wallet!", data)
+      this.featuredWallet = data
+      this.isWalletModalShown = true
+    },
+    onShowTransactionForm(data) {
+      console.log("showing transaction!", data)
+      this.featuredTransaction = data
+      this.isTransactionModalShown = true
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

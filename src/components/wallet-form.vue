@@ -10,13 +10,19 @@
         <td>
           <label for="name">Name: </label>
         </td>
-        <td> <input id="name" type="text"> </td>
+        <td> 
+          <input id="name" type="text" :value="wallet.name" v-if="isEditMode"> 
+          <span v-if="!isEditMode">{{ wallet.name }}</span>
+        </td>
       </tr>
       <tr>
         <td>
           <label for="currency">Currency: </label>
         </td>
-        <td> <input id="currency" type="text"> </td>
+        <td> 
+          <input id="currency" type="text" :value="wallet.currency" v-if="isEditMode"> 
+          <span v-if="!isEditMode">{{ wallet.currency }}</span>
+        </td>
       </tr>
       <tr v-if="isEditMode">
         <td colspan="2">
@@ -50,7 +56,7 @@ export default {
             font-size: 1rem;
             color: rgb(209, 209, 211);
           }
-          label {
+          label, span {
             font-size: .8rem;
             color: rgb(125, 125, 139);
           }

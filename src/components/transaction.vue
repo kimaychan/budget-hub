@@ -25,7 +25,10 @@ export default {
     border-radius: .1rem;
     color: rgb(125, 125, 139);
     font-size: .8rem;
-    // box-shadow: 5px 5px 15px grey;
+    &:hover {
+      background-color: rgba(49, 51, 71, 0.363);
+      cursor: pointer;
+    }
     table {
       width: 100%;
       tr {
