@@ -3,6 +3,7 @@
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
+          <span class="close" @click="$emit('modalcloseclicked')">x</span>
           <slot></slot>
         </div>
       </div>
@@ -38,6 +39,12 @@ export default {
           transition: all .3s ease;
           font-family: Helvetica, Arial, sans-serif;
           padding: .5rem;
+          .close {
+            color: white;
+            font-size: .9rem;
+            cursor: pointer;
+            float: right;
+          }
         }
       }
     }

@@ -10,19 +10,25 @@
         <td>
           <label for="source">Source: </label>
         </td>
-        <td> <input id="source" type="text"> </td>
+        <td> 
+          <input id="source" type="text"> 
+        </td>
       </tr>
       <tr>
         <td>
           <label for="destination">Destination: </label>
         </td>
-        <td> <input id="destination" type="text"> </td>
+        <td> 
+          <input id="destination" type="text"> 
+        </td>
       </tr>
       <tr>
         <td>
           <label for="amount">Amount: </label>
         </td>
-        <td> <input id="amount" type="text"> </td>
+        <td> 
+          <input id="amount" type="text"> 
+        </td>
       </tr>
       <tr v-if="isEditMode">
         <td colspan="2">

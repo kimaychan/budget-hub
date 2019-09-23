@@ -1,15 +1,17 @@
 <template>
   <div class="dashboard">
     <panel title="Your Accounts">
-      <wallet-list :wallets="wallets" @walletclicked="isModalShown=true"></wallet-list> 
+      <wallet-list :wallets="wallets" @walletclicked="isWalletModalShown=true"></wallet-list> 
     </panel>
     <panel title="Your Transactions">
-      <transaction-list :transactions="transactions" ></transaction-list> 
+      <transaction-list :transactions="transactions" @transactionclicked="isTransactionModalShown=true"></transaction-list> 
     </panel>
-    <modal :isShow="isModalShown">
-      <wallet-form :wallet="featured.wallet" v-if="featured.wallet!={}"></wallet-form>
-      <!-- <transaction-form :transaction="featured.transaction" v-if="featured.transaction!={}"></transaction-form> -->
-    </modal>
+    <wallet-modal-form 
+      :isShow="isWalletModalShown" 
+      @modalcloseclicked="isWalletModalShown=false"></wallet-modal-form>
+    <transaction-modal-form 
+      :isShow="isTransactionModalShown" 
+      @modalcloseclicked="isTransactionModalShown=false"></transaction-modal-form>
   </div>
 </template>
 <script>
@@ -17,19 +19,16 @@ import WalletList from "./../components/wallet-list.vue"
 import TransactionList from "./../components/transaction-list.vue"
 import Panel from "./../components/panel.vue"
 
-import WalletForm from "./../components/wallet-form.vue"
-import TransactionForm from "./../components/transaction-form.vue"
-
-import Modal from "./../components/modal.vue"
+import WalletModalForm from "./../components/wallet-modal-form.vue"
+import TransactionModalForm from "./../components/transaction-form-modal.vue"
 
 export default {
   components: {
     WalletList,
     TransactionList,
     Panel,
-    WalletForm,
-    TransactionForm,
-    Modal
+    WalletModalForm,
+    TransactionModalForm
   },
   data: () => {
     return {
@@ -43,25 +42,11 @@ export default {
         { purpose:'savings', amountValue:'5000', amountCurrency:'P', date: 'Aug. 16, 2019', destination: 'Globe', type: 'transfer' },
         { purpose:'salary', amountValue:'9000', amountCurrency:'P', date: 'Aug. 15, 2019', destination: 'Globe', type: 'income' }
       ],
-      isModalShown: false,
-      featured: {
-        wallet: {},
-        transaction: {}
-      }
+      isWalletModalShown: false,
+      isTransactionModalShown: false
     }
   },
-  methods: {
-    // onFeatureWallet(data) {
-    //   this.featured.wallet = {...data}
-    //   this.featured.transaction = {}
-    //   this.isModalShown=true
-    // },
-    // onFeatureTransaction(data) {
-    //   this.featured.wallet = {}
-    //   this.featured.transaction = {...data}
-    //   this.isModalShown=true
-    // }
-  }
+  methods: {}
 }
 </script>
 <style lang="scss" scoped>
