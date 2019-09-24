@@ -1,5 +1,5 @@
 <template>
-  <form class="transaction-form" onsubmit="#">
+  <form class="form" onsubmit="#">
     <table>
       <tr>
         <td colspan="2"> 
@@ -35,7 +35,7 @@
       </tr>
       <tr v-if="isEditMode">
         <td colspan="2">
-          <button type="submit">Submit</button>
+          <button class="button" @click="isEditMode=false">Submit</button>
         </td>
       </tr>
     </table>
@@ -46,50 +46,8 @@ export default {
   props: ["transaction"],
   data: function() {
     return {
-      isEditMode: false
+      isEditMode: true
     }
   }
 }
 </script>
-<style lang="scss" scoped>
-  .transaction-form {
-    padding: 1rem;
-    table {
-      width: 100%;
-      border: none;
-      tr {
-        td {
-          padding: .5rem;
-          .title {
-            text-align: center;
-            font-size: 1rem;
-            color: rgb(209, 209, 211);
-          }
-          label {
-            font-size: .8rem;
-            color: rgb(125, 125, 139);
-          }
-          input {
-            width: 100%;
-            height: 1.2rem;
-            border: none;
-            border-radius: .2rem;
-            &:focus { outline: 0; }
-          }
-          label, span {
-            font-size: .8rem;
-            color: rgb(125, 125, 139);
-          }
-        }
-        &:not(first-child) {
-          td:first-child {
-            text-align: left;
-          }
-          td:last-child {
-            text-align: right;
-          }
-        }
-      }
-    }
-  }
-</style>
