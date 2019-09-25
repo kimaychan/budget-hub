@@ -45,7 +45,6 @@ body {
         input {
           background-color: rgb(15, 20, 36);
           color: white;
-          width: 100%;
           height: 1.2rem;
           border: none;
           border-radius: .2rem;
@@ -67,4 +66,62 @@ body {
       }
     }
   }
+}
+
+.wallet {
+  background-color: rgb(15, 20, 36);
+  padding: 2rem 3rem;
+  text-align: center;
+  border-radius: .1rem;
+  box-sizing: border-box;
+  height: 6rem;
+  width: 10rem;
+  color: rgb(220, 220, 220);
+  .balance { font-size: 120%; }
+  .name {
+    font-size: 60%;
+    display: block;
+    color: rgb(95, 93, 112);
+  }
+  &:hover {
+    background-color: rgba(49, 51, 71, 0.363);
+    cursor: pointer;
+  }
+}
+
+.transaction {
+  padding: 0.5rem;
+  box-sizing: border-box;
+  background-color: rgb(15, 20, 36);
+  border-radius: .1rem;
+  color: rgb(125, 125, 139);
+  font-size: .8rem;
+  &:hover {
+    background-color: rgba(49, 51, 71, 0.363);
+    cursor: pointer;
+  }
+  table {
+    width: 100%;
+    tr {
+      td:first-child, td:last-child {
+        width: 10%;
+      }
+      td:last-child {
+        text-align: right;
+      }
+    }
+  }
+  .income { 
+    color: #30ac57; 
+    &::before {
+      content: "+"
+    }
+  }
+  .expense { 
+    color: #C10505; 
+    &::before {
+      content: "-"
+    }
+  }
+  .transfer { color:#0A68D2; }
 }
