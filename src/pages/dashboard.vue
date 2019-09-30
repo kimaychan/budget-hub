@@ -9,13 +9,23 @@
     <wallet-modal-form 
       :isShow="isWalletModalShown" 
       @modalcloseclicked="isWalletModalShown=false"
+      @deleteclicked="onDeleteWallet"
       :wallet="featuredWallet"
     ></wallet-modal-form>
     <transaction-modal-form 
       :isShow="isTransactionModalShown" 
       @modalcloseclicked="isTransactionModalShown=false"
+      @deleteclicked="onDeleteTransaction"
       :transaction="featuredTransaction"
     ></transaction-modal-form>
+    <delete-confirmation-modal 
+      :isShow="isDeleteWalletModalShown" 
+      @modalcloseclicked="isDeleteWalletModalShown=false"
+      message-title="Wallet"></delete-confirmation-modal>
+    <delete-confirmation-modal 
+      :isShow="isDeleteTransactionModalShown" 
+      @modalcloseclicked="isDeleteTransactionModalShown=false"
+      message-title="Transaction"></delete-confirmation-modal>
   </div>
 </template>
 <script>
@@ -25,6 +35,7 @@ import Panel from "./../components/panel.vue"
 
 import WalletModalForm from "./../components/wallet-modal-form.vue"
 import TransactionModalForm from "./../components/transaction-form-modal.vue"
+import DeleteConfirmationModal from "./../components/delete-confirmation-modal.vue"
 
 export default {
   components: {
@@ -32,7 +43,8 @@ export default {
     TransactionList,
     Panel,
     WalletModalForm,
-    TransactionModalForm
+    TransactionModalForm,
+    DeleteConfirmationModal
   },
   data: () => {
     return {
@@ -72,20 +84,28 @@ export default {
       ],
       isWalletModalShown: false,
       isTransactionModalShown: false,
+      isDeleteWalletModalShown: false,
+      isDeleteTransactionModalShown: false,
       featuredWallet: {},
       featuredTransaction: {}
     }
   },
   methods: {
     onShowWalletForm(data) {
-      console.log("showing wallet!", data)
       this.featuredWallet = data
       this.isWalletModalShown = true
     },
     onShowTransactionForm(data) {
-      console.log("showing transaction!", data)
       this.featuredTransaction = data
       this.isTransactionModalShown = true
+    },
+    onDeleteTransaction() {
+      this.isDeleteTransactionModalShown = true
+      this.isTransactionModalShown = false
+    },
+    onDeleteWallet() {
+      this.isDeleteWalletModalShown = true
+      this.isWalletModalShown = false
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <form class="form" onsubmit="#">
-    <table>
+    <table class="form-table">
       <tr>
         <td colspan="2"> 
           <div class="title">Transaction</div>  
@@ -34,8 +34,11 @@
         </td>
       </tr>
       <tr v-if="isEditMode">
-        <td colspan="2">
-          <button class="button" @click="isEditMode=false">Submit</button>
+        <td>
+          <button class="button button-alert" @click.prevent="$emit('deleteclicked')">Delete</button>
+        </td>
+        <td>
+          <button class="button" @click.prevent="isEditMode=false">Submit</button>
         </td>
       </tr>
     </table>

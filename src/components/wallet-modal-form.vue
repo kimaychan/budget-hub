@@ -1,7 +1,7 @@
 <template>
   <div>
     <modal :isShow="isShow" @modalcloseclicked="$emit('modalcloseclicked')">
-      <wallet-form :wallet="wallet"></wallet-form>
+      <wallet-form :wallet="wallet" @deleteclicked="$emit('deleteclicked')"></wallet-form>
     </modal>
   </div>
 </template>
