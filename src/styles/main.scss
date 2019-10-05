@@ -64,6 +64,7 @@ body {
           border-radius: .2rem;
           padding-left: .5rem;
           &:focus { outline: 0; }
+          &[type='text'] { width: 100%; }
         }
         label, span {
           font-size: .8rem;
@@ -71,13 +72,12 @@ body {
         }
       }
       &:not(first-child) {
-        td:first-child {
-          text-align: left;
-        }
-        td:last-child {
-          text-align: right;
-        }
+        td:first-child { text-align: left; }
+        td:last-child { text-align: right; }
       }
+      &:last-child { 
+        td { padding-right: 0; }
+      } 
     }
   }
   &.confirmation-form {
