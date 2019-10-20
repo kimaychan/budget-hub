@@ -1,0 +1,52 @@
+<template>
+  <div class="modal" v-if="isShow">
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+          <span class="close" @click="$emit('modalcloseclicked')">x</span>
+          <slot></slot>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  props: ["isShow"]
+}
+</script>
+<style lang="scss" scoped>
+  .modal {
+    .modal-mask {
+      position: fixed;
+      z-index: 9998;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(55, 55, 55, .5);
+      display: table;
+      .modal-wrapper {
+        display: table-cell;
+        vertical-align: middle;
+        .modal-container {
+          width: 300px;
+          margin: 0px auto;
+          border: solid .5px rgb(95, 93, 112);
+          background: rgb(0, 5, 22);
+          border-radius: 2px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+          transition: all .3s ease;
+          font-family: Helvetica, Arial, sans-serif;
+          padding: .5rem;
+          .close {
+            color: white;
+            font-size: .9rem;
+            cursor: pointer;
+            float: right;
+          }
+        }
+      }
+    }
+  }
+</style>
