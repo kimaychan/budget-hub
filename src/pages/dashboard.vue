@@ -37,6 +37,8 @@ import WalletModalForm from "./../components/wallet-modal-form.vue"
 import TransactionModalForm from "./../components/transaction-form-modal.vue"
 import DeleteConfirmationModal from "./../components/delete-confirmation-modal.vue"
 
+import { mapState } from "vuex"
+
 export default {
   components: {
     WalletList,
@@ -48,11 +50,6 @@ export default {
   },
   data: () => {
     return {
-      wallets: [
-        { name:'physical wallet', balance:'1920', currency:'P'}, 
-        { name:'savings', balance:'5000', currency:'P'},
-        { name:'emergency fund', balance:'3000', currency:'P'}
-      ],
       transactions: [
         { 
           purpose:'bill', 
@@ -107,7 +104,10 @@ export default {
       this.isDeleteWalletModalShown = true
       this.isWalletModalShown = false
     }
-  }
+  },
+  computed: mapState({
+    wallets: state => state.wallets,
+  })
 }
 </script>
 <style lang="scss" scoped>

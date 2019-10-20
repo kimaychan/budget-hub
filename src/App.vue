@@ -13,15 +13,15 @@ import Dashboard from "./pages/dashboard.vue"
 
 export default {
   name: "App",
-  data: function () {
+  data () {
     return { }
   },
   components: { 
     MainLayout,
     Dashboard 
   }, 
-  mounted: () => {
-    console.log("app is mounted!")
+  mounted () {
+    console.log("app is mounted!", this)
   }
 }
 </script>
