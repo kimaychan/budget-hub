@@ -29,19 +29,30 @@
           <button class="button button-alert" @click.prevent="$emit('deleteclicked')">Delete</button>
         </td>
         <td>
-          <button class="button" @click.prevent="isEditMode=false">Submit</button>
+          <button class="button" @click="onSubmit" @click.prevent="isEditMode=false">Submit</button>
         </td>
       </tr>
     </table>
   </form>  
 </template>
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   props: ["wallet"],
   data: function() {
     return {
       isEditMode: true
     }
+  },
+  methods: {
+    ...mapActions([
+      'addWallet'
+    ]),
+    onSubmit(data) {
+      this.addWallet({})
+    }
   }
+
 }
 </script>

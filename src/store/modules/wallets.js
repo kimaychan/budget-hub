@@ -6,17 +6,18 @@ const state = [
 
 const mutations = {
   addWallet(state, wallet) {
-    state.wallets.push(wallet)
+    state.push(wallet)
+    console.log(wallet)
   },
   editWallet(state, wallet) {
-    state.wallets = state.wallets.map(w => {
+    state = state.map(w => {
       if (w.id == wallet.id) 
         return wallet
       else w
     })
   },
   deleteWallet(state, walletID) {
-    state.wallets = state.wallets.filter(w => w.id != walletID)
+    state = state.filter(w => w.id != walletID)
   }
 }
 
