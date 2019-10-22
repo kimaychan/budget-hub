@@ -1,5 +1,5 @@
 <template>
-  <form class="form" onsubmit="#">
+  <form class="form" v-on:submit.prevent="onSubmit">
     <table class="form-table">
       <tr>
         <td colspan="2"> 
@@ -11,8 +11,17 @@
           <label for="name">Name: </label>
         </td>
         <td> 
-          <input id="name" type="text" :value="wallet.name" v-if="isEditMode"> 
+          <input id="name" type="text" v-model="walletForm.name" v-if="isEditMode"> 
           <span v-if="!isEditMode">{{ wallet.name }}</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="balance">Balance: </label>
+        </td>
+        <td> 
+          <input id="balance" type="text" v-model="walletForm.balance" v-if="isEditMode"> 
+          <span v-if="!isEditMode">{{ wallet.balance }}</span>
         </td>
       </tr>
       <tr>
@@ -20,16 +29,16 @@
           <label for="currency">Currency: </label>
         </td>
         <td> 
-          <input id="currency" type="text" :value="wallet.currency" v-if="isEditMode"> 
+          <input id="currency" type="text" v-model="walletForm.currency" v-if="isEditMode"> 
           <span v-if="!isEditMode">{{ wallet.currency }}</span>
         </td>
       </tr>
       <tr v-if="isEditMode">
         <td>
-          <button class="button button-alert" @click.prevent="$emit('deleteclicked')">Delete</button>
+          <button class="button button-alert" @click="onDelete">Delete</button>
         </td>
         <td>
-          <button class="button" @click="onSubmit" @click.prevent="isEditMode=false">Submit</button>
+          <button type="submit" class="button">Submit</button>
         </td>
       </tr>
     </table>
@@ -42,17 +51,27 @@ export default {
   props: ["wallet"],
   data: function() {
     return {
-      isEditMode: true
+      isEditMode: true,
+      walletForm: {
+        id: this.wallet.id,
+        name: this.wallet.name,
+        balance: this.wallet.balance,
+        currency: this.wallet.currency
+      }
     }
   },
   methods: {
     ...mapActions([
-      'addWallet'
+      'addWallet',
+      'deleteWallet'
     ]),
-    onSubmit(data) {
-      this.addWallet({})
+    onSubmit(e) {
+      this.addWallet(this.walletForm)
+    },
+    onDelete(e) {
+      console.log(this.walletForm.id)
+      this.deleteWallet(this.walletForm.id)
     }
   }
-
 }
 </script>

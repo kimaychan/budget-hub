@@ -106,7 +106,7 @@ export default {
     }
   },
   computed: mapState({
-    wallets: state => state.wallets,
+    wallets: state => state.wallets.list,
   })
 }
 </script>
