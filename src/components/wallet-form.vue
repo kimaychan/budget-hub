@@ -70,7 +70,6 @@ export default {
       this.addWallet(this.walletForm)
     },
     onDelete(e) {
-      console.log(this.walletForm.id)
       this.deleteWallet(this.walletForm.id)
     }
   }
