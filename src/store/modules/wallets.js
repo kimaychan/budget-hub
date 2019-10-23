@@ -1,7 +1,7 @@
 const state = {
   list: [
-    // { id: 0, name:'physical wallet', balance:'1920', currency:'P' }, 
-    // { id: 1, name:'savings', balance:'5000', currency:'P' },
+    { id: 0, name:'physical wallet', balance:'1920', currency:'P' }, 
+    { id: 1, name:'savings', balance:'5000', currency:'P' },
     { id: 2, name:'emergency fund', balance:'3000', currency:'P' }
   ]
 }
@@ -18,8 +18,7 @@ const mutations = {
     })
   },
   deleteWallet(state, walletID) {
-    state.list.splice(state.list.splice(state.list.findIndex(w => w.id == walletID)), 1)
-    console.log(state.list)
+    state.list.splice(state.list.findIndex(w => w.id == walletID), 1)
   }
 }
 

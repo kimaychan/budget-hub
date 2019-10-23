@@ -35,7 +35,7 @@
       </tr>
       <tr v-if="isEditMode">
         <td>
-          <button class="button button-alert" @click="onDelete">Delete</button>
+          <button class="button button-alert" @click.prevent="onDelete">Delete</button>
         </td>
         <td>
           <button type="submit" class="button">Submit</button>
@@ -63,7 +63,8 @@ export default {
   methods: {
     ...mapActions([
       'addWallet',
-      'deleteWallet'
+      'deleteWallet',
+      'editWallet'
     ]),
     onSubmit(e) {
       this.addWallet(this.walletForm)
