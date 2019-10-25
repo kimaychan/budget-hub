@@ -48,7 +48,7 @@
 import { mapActions } from 'vuex'
 
 export default {
-  props: ["wallet"],
+  props: ["wallet", "onsubmit"],
   data: function() {
     return {
       isEditMode: true,
@@ -62,12 +62,10 @@ export default {
   },
   methods: {
     ...mapActions([
-      'addWallet',
-      'deleteWallet',
-      'editWallet'
+      'deleteWallet'
     ]),
     onSubmit(e) {
-      this.addWallet(this.walletForm)
+      this.onsubmit(this.walletForm)
     },
     onDelete(e) {
       this.deleteWallet(this.walletForm.id)

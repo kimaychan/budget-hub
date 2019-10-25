@@ -11,14 +11,7 @@ const mutations = {
     state.list.push(wallet)
   },
   editWallet(state, wallet) {
-    let i = 0
-    while(i < state.list.length) {
-      if (state.list[i].id == wallet.id) {
-        state.list[i] = wallet
-        return
-      }
-      i++
-    }
+    state.list = state.list.map(w => w.id == wallet.id ? wallet : w)
   },
   deleteWallet(state, walletID) {
     state.list.splice(state.list.findIndex(w => w.id == walletID), 1)

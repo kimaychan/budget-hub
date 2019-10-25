@@ -8,9 +8,10 @@
     </panel>
     <wallet-modal-form 
       :isShow="isWalletModalShown" 
+      :wallet="featuredWallet"
+      :onsubmit="onSubmitWalletForm"
       @modalcloseclicked="isWalletModalShown=false"
       @deleteclicked="onDeleteWallet"
-      :wallet="featuredWallet"
     ></wallet-modal-form>
     <transaction-modal-form 
       :isShow="isTransactionModalShown" 
@@ -37,7 +38,7 @@ import WalletModalForm from "./../components/wallet-modal-form.vue"
 import TransactionModalForm from "./../components/transaction-form-modal.vue"
 import DeleteConfirmationModal from "./../components/delete-confirmation-modal.vue"
 
-import { mapState } from "vuex"
+import { mapState, mapActions } from "vuex"
 
 export default {
   components: {
@@ -88,6 +89,10 @@ export default {
     }
   },
   methods: {
+    ...mapActions([
+      'addWallet',
+      'editWallet'
+    ]),
     onShowWalletForm(data) {
       this.featuredWallet = data
       this.isWalletModalShown = true
@@ -103,6 +108,10 @@ export default {
     onDeleteWallet() {
       this.isDeleteWalletModalShown = true
       this.isWalletModalShown = false
+    },
+    onSubmitWalletForm(walletForm) {
+      if (walletForm.id) this.editWallet(walletForm)
+      else this.addWallet(walletForm)
     }
   },
   computed: mapState({
