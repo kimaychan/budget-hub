@@ -2,3 +2,6 @@ node_modules
 pockage-lock.json
 .DS_Store
 .vs_code
+
+package-lock.json
+package.json

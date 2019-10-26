@@ -35,7 +35,7 @@
       </tr>
       <tr v-if="isEditMode">
         <td>
-          <button class="button button-alert" @click.prevent="onDelete">Delete</button>
+          <button class="button button-alert" @click.prevent="$emit('deleteclicked')">Delete</button>
         </td>
         <td>
           <button type="submit" class="button">Submit</button>
@@ -45,10 +45,8 @@
   </form>  
 </template>
 <script>
-import { mapActions } from 'vuex'
-
 export default {
-  props: ["wallet", "onsubmit"],
+  props: ["wallet", "onsubmit", "ondelete"],
   data: function() {
     return {
       isEditMode: true,
@@ -61,14 +59,11 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
-      'deleteWallet'
-    ]),
     onSubmit(e) {
       this.onsubmit(this.walletForm)
     },
     onDelete(e) {
-      this.deleteWallet(this.walletForm.id)
+      this.ondelete(this.walletForm.id)
     }
   }
 }

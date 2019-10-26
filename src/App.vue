@@ -21,7 +21,7 @@ export default {
     Dashboard 
   }, 
   mounted () {
-    console.log("app is mounted!", this)
+    // console.log("app is mounted!", this)
   }
 }
 </script>

@@ -1,32 +1,11 @@
 <template>
   <div class="dashboard">
     <panel title="Your Accounts">
-      <wallet-list :wallets="wallets" @walletclicked="onShowWalletForm"></wallet-list> 
+      <wallet-list :wallets="wallets"></wallet-list> 
     </panel>
     <panel title="Your Transactions">
-      <transaction-list :transactions="transactions" @transactionclicked="onShowTransactionForm"></transaction-list> 
+      <transaction-list :transactions="transactions"></transaction-list> 
     </panel>
-    <wallet-modal-form 
-      :isShow="isWalletModalShown" 
-      :wallet="featuredWallet"
-      :onsubmit="onSubmitWalletForm"
-      @modalcloseclicked="isWalletModalShown=false"
-      @deleteclicked="onDeleteWallet"
-    ></wallet-modal-form>
-    <transaction-modal-form 
-      :isShow="isTransactionModalShown" 
-      @modalcloseclicked="isTransactionModalShown=false"
-      @deleteclicked="onDeleteTransaction"
-      :transaction="featuredTransaction"
-    ></transaction-modal-form>
-    <delete-confirmation-modal 
-      :isShow="isDeleteWalletModalShown" 
-      @modalcloseclicked="isDeleteWalletModalShown=false"
-      message-title="Wallet"></delete-confirmation-modal>
-    <delete-confirmation-modal 
-      :isShow="isDeleteTransactionModalShown" 
-      @modalcloseclicked="isDeleteTransactionModalShown=false"
-      message-title="Transaction"></delete-confirmation-modal>
   </div>
 </template>
 <script>
@@ -79,13 +58,7 @@ export default {
           destination: 'Globe', 
           type: 'income' 
         }
-      ],
-      isWalletModalShown: false,
-      isTransactionModalShown: false,
-      isDeleteWalletModalShown: false,
-      isDeleteTransactionModalShown: false,
-      featuredWallet: {},
-      featuredTransaction: {}
+      ]
     }
   },
   methods: {
@@ -93,22 +66,6 @@ export default {
       'addWallet',
       'editWallet'
     ]),
-    onShowWalletForm(data) {
-      this.featuredWallet = data
-      this.isWalletModalShown = true
-    },
-    onShowTransactionForm(data) {
-      this.featuredTransaction = data
-      this.isTransactionModalShown = true
-    },
-    onDeleteTransaction() {
-      this.isDeleteTransactionModalShown = true
-      this.isTransactionModalShown = false
-    },
-    onDeleteWallet() {
-      this.isDeleteWalletModalShown = true
-      this.isWalletModalShown = false
-    },
     onSubmitWalletForm(walletForm) {
       if (walletForm.id) this.editWallet(walletForm)
       else this.addWallet(walletForm)
@@ -127,5 +84,3 @@ export default {
     }
   }
 </style>
-
-
